@@ -127,6 +127,7 @@ public class Admin extends User{
     	int num= input.nextInt();
     	num--;
     	System.out.println("Enter new name: ");
+    	input.nextLine();
     	String name=input.nextLine();
     	Category.categories.get(num).editname(name);
 }
@@ -150,15 +151,17 @@ public class Admin extends User{
 			String place=input.nextLine();
 			 System.out.println("date: ");
 			String date=input.nextLine();
-			 System.out.println("time: ");
-			String time=input.nextLine();
+			 System.out.println("start_time: ");
+			String start_time=input.nextLine();
+			 System.out.println("end_time: ");
+			 String end_time=input.nextLine();
 			System.out.println("number of available tickets: ");
 			int tickets=input.nextInt();
 			System.out.println("description (optional): "); 
 			input.nextLine();
 			String description=input.nextLine();
 		
-			(Category.categories.get(category_choice)).events.add(new Event(name,place,date,time,tickets,description));
+			(Category.categories.get(category_choice)).events.add(new Event(name,place,date,start_time,end_time,tickets,description));
 		 
 		  }
     private void editevent(int category_choice) {
@@ -178,16 +181,18 @@ public class Admin extends User{
 			 System.out.println("date: ");
 			 input.nextLine();
 			String date=input.nextLine();
-			 System.out.println("time: ");
+			 System.out.println("start_time: ");
 			 input.nextLine();
-			String time=input.nextLine();
+			String start_time=input.nextLine();
+			 System.out.println("end_time: ");
+			 String end_time=input.nextLine();
 			System.out.println("number of available tickets: ");
 			int tickets=input.nextInt();
 			input.nextInt();
 			System.out.println("description: "); 
 			
 			String description=input.nextLine();
-			(Category.categories.get(category_choice)).events.get(num).editevent(name,place,date,time,tickets,description);
+			(Category.categories.get(category_choice)).events.get(num).editevent(name,place,date,start_time,end_time,tickets,description);
 			
 		}
     private void delete_event(int category_choice) {
